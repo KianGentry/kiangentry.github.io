@@ -4,6 +4,18 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('fonts/IBMPlexMono-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
 
 body {
     margin: 0;
@@ -41,6 +53,7 @@ nav {
     padding: 0;
     justify-content: center;
     width: 100%;
+    font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
 }
 
 .nav-links a {
@@ -150,10 +163,14 @@ h3, h4, h5, h6 {
     font-size: 1.1em;
 }
 
-body, p, ul, li, pre, code, h1, h2, h3, h4, h5, h6, nav, .nav-links, .cta, figcaption, input, button {
-    color: #aaa;
-    font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
+body, p, ul, li, pre, code, h1, h2, h3, h4, h5, h6, nav, .cta, figcaption, input, button {
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
     font-size: 15px;
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    font-weight: bold;
 }
 
 .screenshot-section {
