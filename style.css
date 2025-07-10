@@ -129,6 +129,31 @@ ul, li, p {
     font-family: inherit;
 }
 
+.screenshot-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+.screenshot-img {
+    display: block;
+    margin: 1rem auto;
+    border: 2px solid #fff;
+    background: #000;
+    max-width: 100%;
+    height: auto;
+}
+figure {
+    margin: 1.5rem auto;
+    display: inline-block;
+    background: #000;
+}
+figcaption {
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     .nav-container, main {
         max-width: 100%;
