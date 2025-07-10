@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace';
+    font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
     background: #000;
     color: #fff;
 }
@@ -134,9 +134,9 @@ h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-body, p, ul, li, pre, code {
+body, p, ul, li, pre, code, h1, h2, h3, h4, h5, h6, nav, .nav-links, .cta, figcaption, input, button {
     color: #aaa;
-    font-family: inherit;
+    font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
 }
 
 .screenshot-section {
