@@ -129,13 +129,13 @@ h1 {
     font-weight: bold;
 }
 h2, h3, h4, h5, h6 {
-    color: #aaa;
+    color: #fff;
     font-family: inherit;
     font-weight: bold;
 }
 
-ul, li, p {
-    color: #fff;
+body, p, ul, li, pre, code {
+    color: #aaa;
     font-family: inherit;
 }
 
