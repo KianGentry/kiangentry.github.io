@@ -59,20 +59,23 @@ main {
 }
 
 .hero {
-    text-align: left;
-    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    padding: 1.2rem 1rem 1rem 1rem;
+    margin-top: 1.2rem;
 }
 
 .hero h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
     font-family: inherit;
+    text-align: center;
 }
 
 .hero p {
     font-size: 1rem;
     margin-bottom: 2rem;
     font-family: inherit;
+    text-align: center;
 }
 
 .cta {
@@ -87,6 +90,8 @@ main {
     text-decoration: none;
     font-family: inherit;
     transition: none;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .cta:hover {
@@ -118,8 +123,13 @@ pre, code {
     padding: 0;
 }
 
-h2, h3, h4, h5, h6 {
-    color: #fff;
+h1, h2 {
+    color: #ffe600;
+    font-family: inherit;
+    font-weight: bold;
+}
+h3, h4, h5, h6 {
+    color: #ccc;
     font-family: inherit;
     font-weight: bold;
 }
