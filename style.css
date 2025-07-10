@@ -123,12 +123,12 @@ pre, code {
     padding: 0;
 }
 
-h1, h2 {
+h1 {
     color: #ffe600;
     font-family: inherit;
     font-weight: bold;
 }
-h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     color: #ccc;
     font-family: inherit;
     font-weight: bold;
