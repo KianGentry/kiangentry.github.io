@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYN-OS - Docs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <span class="logo">EYN-OS</span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>Documentation</h1>
+        <h2>Overview</h2>
+        <p><strong>EYN-OS</strong> is a 32-bit operating system for Intel i386 hardware and QEMU. It features a custom filesystem (EYNFS), a basic shell, a built-in text editor (Write), and a work-in-progress C compiler. EYN-OS is designed for learning, experimentation, and extensibility.</p>
+
+        <h2>Shell Commands</h2>
+        <p>The EYN-OS shell provides a familiar command-line interface. Some available commands include:</p>
+        <ul>
+            <li><code>help</code> &mdash; List available commands</li>
+            <li><code>ver</code> &mdash; Show OS version</li>
+            <li><code>ls</code> &mdash; List files in the current directory</li>
+            <li><code>cd</code> &mdash; Change directory</li>
+            <li><code>cat</code> &mdash; View file contents</li>
+            <li><code>write &lt;filename&gt;</code> &mdash; Open the Write text editor</li>
+            <li><code>format</code> &mdash; Format a disk with EYNFS</li>
+            <li><code>mount</code> &mdash; Mount a filesystem</li>
+            <li><code>run</code> &mdash; Run a program</li>
+            <li><code>exit</code> &mdash; Exit the shell</li>
+        </ul>
+
+        <h2>Write (Text Editor)</h2>
+        <p><strong>Write</strong> is the built-in text editor for EYN-OS. It allows you to create and edit text files directly within the OS. Features include:</p>
+        <ul>
+            <li>Basic text editing (insert, delete, navigate)</li>
+            <li>Open and save files to EYNFS</li>
+            <li>Keyboard shortcuts: <code>Ctrl+O</code> to save, <code>Ctrl+X</code> to exit</li>
+        </ul>
+        <p>To launch Write, use the shell command: <code>write &lt;filename&gt;</code></p>
+
+        <h2>EYNFS (Filesystem)</h2>
+        <p><strong>EYNFS</strong> is the custom filesystem used by EYN-OS. It is designed for simplicity and efficiency, supporting basic file and directory operations. You can format a disk image with EYNFS using the <code>eynfs_format</code> tool, and interact with files using shell commands.</p>
+        <ul>
+            <li>Format a disk: <code>format</code> (from the shell) or <code>eynfs_format</code> (external tool)</li>
+            <li>Mount a filesystem: <code>mount</code></li>
+            <li>File operations: <code>ls</code>, <code>cd</code>, <code>cat</code>, <code>write</code>, etc.</li>
+        </ul>
+    </main>
+</body>
+</html> 

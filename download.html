@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYN-OS - Download</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <span class="logo">EYN-OS</span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>Download EYN-OS</h1>
+        <p><strong>Development Build:</strong> EYN-OS is under active development. Download the latest ISO and filesystem images below.</p>
+        <ul>
+            <li><a href="EYN-OS/EYNOS.iso" download>EYNOS.iso</a> (bootable image)</li>
+            <li><a href="EYN-OS/eynfs.img" download>eynfs.img</a> (filesystem image)</li>
+        </ul>
+        <h2>How to Run</h2>
+        <p><strong>With QEMU:</strong></p>
+        <pre>qemu-system-i386 -cdrom EYNOS.iso -hda tmp/boot/disk.img -hdb tmp/boot/eynfs.img -boot d</pre>
+        <p>Or simply run:</p>
+        <pre>make run</pre>
+        <p><strong>On Real Hardware:</strong> Flash the ISO to a USB drive and boot on compatible Intel i386 hardware.</p>
+    </main>
+</body>
+</html> 
