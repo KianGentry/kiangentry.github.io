@@ -1,14 +1,14 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f7f8fa;
-    color: #222;
+    font-family: 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'monospace';
+    background: #000;
+    color: #fff;
 }
 
 nav {
-    background: #222;
+    background: #000;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: none;
 }
 
 .nav-container {
@@ -24,6 +24,7 @@ nav {
     font-weight: bold;
     font-size: 1.3rem;
     letter-spacing: 2px;
+    font-family: inherit;
 }
 
 .nav-links {
@@ -38,56 +39,94 @@ nav {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s;
+    font-family: inherit;
+    transition: none;
 }
 
 .nav-links a:hover {
-    color: #4fc3f7;
+    text-decoration: underline;
+    color: #fff;
 }
 
 main {
     max-width: 900px;
     margin: 2.5rem auto 0 auto;
     padding: 1.5rem;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    background: #000;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
 }
 
 .hero {
-    text-align: center;
-    padding: 3rem 1rem 2rem 1rem;
+    text-align: left;
+    padding: 2rem 1rem 1rem 1rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
+    font-family: inherit;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
+    font-family: inherit;
 }
 
 .cta {
     display: inline-block;
-    background: #4fc3f7;
+    background: none;
     color: #fff;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #fff;
+    border-radius: 0;
+    font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
-    transition: background 0.2s;
+    font-family: inherit;
+    transition: none;
 }
 
 .cta:hover {
-    background: #039be5;
+    background: #fff;
+    color: #000;
 }
 
 .features-list {
     padding-left: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.screenshot-placeholder {
+    color: #fff;
+    background: #000;
+    border: 1px dashed #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-family: inherit;
+}
+
+pre, code {
+    background: #000;
+    color: #fff;
+    font-family: inherit;
+    border: none;
+    padding: 0;
+}
+
+h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+ul, li, p {
+    color: #fff;
+    font-family: inherit;
 }
 
 @media (max-width: 600px) {
@@ -99,6 +138,6 @@ main {
         gap: 0.7rem;
     }
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 } 
