@@ -163,7 +163,11 @@ h3, h4, h5, h6 {
     font-size: 1.1em;
 }
 
-body, p, ul, li, pre, code, h1, h2, h3, h4, h5, h6, nav, .cta, figcaption, input, button {
+nav, .nav-links {
+    font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
+}
+
+body, p, ul, li, pre, code, .cta, figcaption, input, button {
     font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
     font-size: 15px;
     font-weight: normal;
