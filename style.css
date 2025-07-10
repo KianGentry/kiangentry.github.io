@@ -88,14 +88,16 @@ main {
 .hero h1 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    font-family: inherit;
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    font-weight: bold;
     text-align: center;
 }
 
 .hero p {
     font-size: 1rem;
     margin-bottom: 2rem;
-    font-family: inherit;
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    font-weight: normal;
     text-align: center;
 }
 
@@ -167,6 +169,15 @@ nav, .nav-links {
     font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
 }
 
+.hero h1 {
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    font-weight: bold;
+}
+.hero p, .hero .cta {
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    font-weight: normal;
+}
+
 body, p, ul, li, pre, code, .cta, figcaption, input, button {
     font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
     font-size: 15px;
@@ -200,6 +211,26 @@ figcaption {
     font-size: 0.95rem;
     margin-top: 0.5rem;
     text-align: center;
+}
+
+.about-logo-section {
+    text-align: center;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.about-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+.about-license {
+    color: #555;
+    font-size: 0.95em;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
 }
 
 @media (max-width: 600px) {
