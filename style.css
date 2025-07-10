@@ -10,6 +10,7 @@ body {
     font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
     background: #000;
     color: #fff;
+    font-size: 15px;
 }
 
 nav {
@@ -134,16 +135,25 @@ h1 {
     color: #ffe600;
     font-family: inherit;
     font-weight: bold;
+    font-size: 1.7em;
 }
-h2, h3, h4, h5, h6 {
+h2 {
     color: #fff;
     font-family: inherit;
     font-weight: bold;
+    font-size: 1.3em;
+}
+h3, h4, h5, h6 {
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 body, p, ul, li, pre, code, h1, h2, h3, h4, h5, h6, nav, .nav-links, .cta, figcaption, input, button {
     color: #aaa;
     font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
+    font-size: 15px;
 }
 
 .screenshot-section {
