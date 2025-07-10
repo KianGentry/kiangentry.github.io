@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Perfect DOS VGA 437';
+    src: url('fonts/Web437_IBM_BIOS.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0;
     font-family: 'Perfect DOS VGA 437', 'Press Start 2P', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace !important;
