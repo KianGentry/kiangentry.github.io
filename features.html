@@ -20,14 +20,82 @@
         </div>
     </nav>
     <main>
-        <h1>Features</h1>
-        <ul class="features-list">
-            <li><strong>Custom Filesystem (EYNFS):</strong> EYN-OS uses its own filesystem, designed for simplicity and efficiency. Includes a custom formatting tool and supports basic file operations.</li>
-            <li><strong>Custom C Compiler:</strong> A port/adaptation of TinyCC is included, allowing for C development directly within or for EYN-OS. (Work in progress)</li>
-            <li><strong>Built-in Text Editor:</strong> EYN-OS features a text editor accessible from the shell, supporting basic editing, file loading, and saving.</li>
-            <li><strong>Basic Shell:</strong> The OS includes a shell with familiar commands (<code>help</code>, <code>ver</code>, etc.), making it easy to interact with the system.</li>
-            <li><strong>Runs on Real Hardware and QEMU:</strong> Bootable via QEMU or from a USB stick on real Intel i386 hardware.</li>
-        </ul>
+        <h1>Features - Release 11</h1>
+        
+        <section class="feature-section">
+            <h2>Game Engine</h2>
+            <p><strong>Generic 2D Game Engine:</strong> EYN-OS now includes a powerful game engine that supports human-readable text file formats. Create and play multiple game types including Snake, Maze Runner, and custom games with configurable objects, entities, and AI.</p>
+            <ul>
+                <li>Human-readable text file format for easy game creation</li>
+                <li>Multiple game types: Snake, Maze, Generic</li>
+                <li>Collision detection and combat systems</li>
+                <li>Simple AI for enemies and NPCs</li>
+                <li>Health and damage systems</li>
+                <li>Collectible items and objectives</li>
+                <li>Arrow key and WASD support</li>
+                <li>Level-based games with custom layouts</li>
+            </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>Development Tools</h2>
+            <p><strong>Built-in Assembler:</strong> EYN-OS includes a NASM-compatible assembler that allows you to write and compile assembly code directly within the operating system.</p>
+            <ul>
+                <li>NASM-compatible syntax</li>
+                <li>Support for basic x86 instructions (mov, add, sub, jmp, call, ret, int)</li>
+                <li>Label resolution and forward references</li>
+                <li>Data directives (db, dw, dd)</li>
+                <li>Generates EYN executable format</li>
+                <li>Complete development environment without external tools</li>
+            </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>Math Utilities</h2>
+            <p><strong>Advanced Mathematical Functions:</strong> Comprehensive math library including random number generation, sorting algorithms, and search functions.</p>
+            <ul>
+                <li>Linear Congruential Generator for random numbers</li>
+                <li>Quicksort implementation for string arrays</li>
+                <li>Boyer-Moore string search algorithm</li>
+                <li>Range-based random number generation</li>
+                <li>Efficient memory usage for low-end systems</li>
+            </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>Enhanced Filesystem</h2>
+            <p><strong>EYNFS with Advanced Operations:</strong> Improved filesystem with better file handling and operations.</p>
+            <ul>
+                <li>Custom EYNFS filesystem with improved performance</li>
+                <li>Advanced file operations (copy, move, delete)</li>
+                <li>Directory management and traversal</li>
+                <li>Support for large files (fixed truncation issues)</li>
+                <li>FAT32 compatibility for existing filesystems</li>
+            </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>User Interface</h2>
+            <p><strong>Enhanced Shell and TUI:</strong> Improved user interface with better command handling and text user interface system.</p>
+            <ul>
+                <li>Command history with arrow key navigation</li>
+                <li>Interactive help system</li>
+                <li>Enhanced text editor with improved file handling</li>
+                <li>Consistent TUI framework for all applications</li>
+                <li>Color support and keyboard handling</li>
+            </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>System Features</h2>
+            <ul>
+                <li><strong>Custom Filesystem (EYNFS):</strong> EYN-OS uses its own filesystem, designed for simplicity and efficiency. Includes a custom formatting tool and supports advanced file operations.</li>
+                <li><strong>Built-in Text Editor:</strong> EYN-OS features an enhanced text editor accessible from the shell, supporting basic editing, file loading, and saving with improved file size handling.</li>
+                <li><strong>Enhanced Shell:</strong> The OS includes an improved shell with familiar commands, command history, and comprehensive help system.</li>
+                <li><strong>Runs on Real Hardware and QEMU:</strong> Bootable via QEMU or from a USB stick on real Intel i386 hardware.</li>
+            </ul>
+        </section>
+
         <div class="screenshot-section">
             <h2>Feature Screenshots</h2>
             <figure>

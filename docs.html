@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EYN-OS - Docs</title>
+    <title>EYN-OS - Documentation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,41 +20,245 @@
         </div>
     </nav>
     <main>
-        <h1>Documentation</h1>
-        <h2>Overview</h2>
-        <p><strong>EYN-OS</strong> is a 32-bit operating system for Intel i386 hardware and QEMU. It features a custom filesystem (EYNFS), a basic shell, a built-in text editor (Write), and a work-in-progress C compiler. EYN-OS is designed for learning, experimentation, and extensibility.</p>
+        <h1>EYN-OS Documentation - Release 11</h1>
+        
+        <section class="doc-overview">
+            <h2>Comprehensive Documentation</h2>
+            <p>EYN-OS Release 11 includes extensive documentation covering all aspects of the operating system. Whether you're a user, developer, or just curious about how EYN-OS works, you'll find detailed information here.</p>
+        </section>
 
-        <h2>Shell Commands</h2>
-        <p>The EYN-OS shell provides a familiar command-line interface. Some available commands include:</p>
-        <ul>
-            <li><code>help</code> &mdash; List available commands</li>
-            <li><code>ver</code> &mdash; Show OS version</li>
-            <li><code>ls</code> &mdash; List files in the current directory</li>
-            <li><code>cd</code> &mdash; Change directory</li>
-            <li><code>cat</code> &mdash; View file contents</li>
-            <li><code>write &lt;filename&gt;</code> &mdash; Open the Write text editor</li>
-            <li><code>format</code> &mdash; Format a disk with EYNFS</li>
-            <li><code>mount</code> &mdash; Mount a filesystem</li>
-            <li><code>run</code> &mdash; Run a program</li>
-            <li><code>exit</code> &mdash; Exit the shell</li>
-        </ul>
+        <section class="doc-sections">
+            <h2>Documentation Sections</h2>
+            
+            <div class="doc-section">
+                <h3>Game Engine Documentation</h3>
+                <p><strong>Generic 2D Game Engine:</strong> Complete documentation for the new game engine system.</p>
+                <ul>
+                    <li><strong>Game Engine Overview:</strong> Architecture and design principles</li>
+                    <li><strong>Game File Format:</strong> Human-readable text file specification</li>
+                    <li><strong>Game Types:</strong> Snake, Maze, and Generic game implementations</li>
+                    <li><strong>Entity System:</strong> Objects, entities, and AI behavior</li>
+                    <li><strong>Controls:</strong> Keyboard input and game controls</li>
+                    <li><strong>Level Design:</strong> Creating custom game layouts</li>
+                    <li><strong>Collision Detection:</strong> Object interaction and combat systems</li>
+                </ul>
+            </div>
 
-        <h2>Write (Text Editor)</h2>
-        <p><strong>Write</strong> is the built-in text editor for EYN-OS. It allows you to create and edit text files directly within the OS. Features include:</p>
-        <ul>
-            <li>Basic text editing (insert, delete, navigate)</li>
-            <li>Open and save files to EYNFS</li>
-            <li>Keyboard shortcuts: <code>Ctrl+O</code> to save, <code>Ctrl+X</code> to exit</li>
-        </ul>
-        <p>To launch Write, use the shell command: <code>write &lt;filename&gt;</code></p>
+            <div class="doc-section">
+                <h3>Development Tools</h3>
+                <p><strong>Built-in Assembler:</strong> Complete guide to the NASM-compatible assembler.</p>
+                <ul>
+                    <li><strong>Assembler Overview:</strong> Architecture and components</li>
+                    <li><strong>Supported Instructions:</strong> x86 instruction set coverage</li>
+                    <li><strong>Addressing Modes:</strong> Register, immediate, and memory addressing</li>
+                    <li><strong>Labels and Symbols:</strong> Symbol resolution and forward references</li>
+                    <li><strong>Directives:</strong> Section and data directives</li>
+                    <li><strong>Usage Examples:</strong> Complete assembly programs</li>
+                    <li><strong>Error Handling:</strong> Common errors and debugging</li>
+                </ul>
+            </div>
 
-        <h2>EYNFS (Filesystem)</h2>
-        <p><strong>EYNFS</strong> is the custom filesystem used by EYN-OS. It is designed for simplicity and efficiency, supporting basic file and directory operations. You can format a disk image with EYNFS using the <code>eynfs_format</code> tool, and interact with files using shell commands.</p>
-        <ul>
-            <li>Format a disk: <code>format</code> (from the shell) or <code>eynfs_format</code> (external tool)</li>
-            <li>Mount a filesystem: <code>mount</code></li>
-            <li>File operations: <code>ls</code>, <code>cd</code>, <code>cat</code>, <code>write</code>, etc.</li>
-        </ul>
+            <div class="doc-section">
+                <h3>Math Utilities</h3>
+                <p><strong>Mathematical Functions:</strong> Comprehensive math library documentation.</p>
+                <ul>
+                    <li><strong>Random Number Generation:</strong> Linear Congruential Generator</li>
+                    <li><strong>Sorting Algorithms:</strong> Quicksort implementation for strings</li>
+                    <li><strong>Search Algorithms:</strong> Boyer-Moore string search</li>
+                    <li><strong>Performance Characteristics:</strong> Algorithm efficiency and benchmarks</li>
+                    <li><strong>Integration:</strong> How math utilities integrate with EYN-OS</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>Filesystem Documentation</h3>
+                <p><strong>EYNFS and File Operations:</strong> Complete filesystem documentation.</p>
+                <ul>
+                    <li><strong>EYNFS Specification:</strong> Native filesystem design and structure</li>
+                    <li><strong>File Operations:</strong> Read, write, create, delete operations</li>
+                    <li><strong>Directory Management:</strong> Directory traversal and management</li>
+                    <li><strong>FAT32 Support:</strong> Compatibility with existing filesystems</li>
+                    <li><strong>Filesystem Commands:</strong> Shell commands for file management</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>User Interface</h3>
+                <p><strong>Shell and TUI System:</strong> User interface documentation.</p>
+                <ul>
+                    <li><strong>Shell System:</strong> Command-line interface and commands</li>
+                    <li><strong>TUI Framework:</strong> Text User Interface system</li>
+                    <li><strong>Help System:</strong> Interactive documentation viewer</li>
+                    <li><strong>Keyboard Handling:</strong> Input processing and shortcuts</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>System Architecture</h3>
+                <p><strong>Core System Documentation:</strong> Low-level system information.</p>
+                <ul>
+                    <li><strong>System Overview:</strong> High-level architecture and design principles</li>
+                    <li><strong>Boot Process:</strong> From GRUB to kernel initialization</li>
+                    <li><strong>Memory Management:</strong> Memory allocation and management</li>
+                    <li><strong>Interrupts & Exceptions:</strong> IDT, ISRs, and exception handling</li>
+                    <li><strong>Hardware Support:</strong> Device drivers and hardware compatibility</li>
+                </ul>
+            </div>
+
+            <div class="doc-section">
+                <h3>Quick Reference</h3>
+                <p><strong>Command Reference:</strong> Quick access to common commands and operations.</p>
+                <ul>
+                    <li><strong>Shell Commands:</strong> Complete command reference</li>
+                    <li><strong>File Operations:</strong> Common file management tasks</li>
+                    <li><strong>Game Commands:</strong> How to run and play games</li>
+                    <li><strong>Development Commands:</strong> Assembler and development tools</li>
+                    <li><strong>Troubleshooting:</strong> Common issues and solutions</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="getting-started">
+            <h2>Getting Started</h2>
+            <p>New to EYN-OS? Start with these essential guides:</p>
+            <ul>
+                <li><strong>For Users:</strong> Start with <a href="#system-overview">System Overview</a> and <a href="#shell-system">Shell System</a></li>
+                <li><strong>For Developers:</strong> Begin with <a href="#system-overview">System Overview</a> and <a href="#assembler">Assembler Documentation</a></li>
+                <li><strong>For Game Development:</strong> See <a href="#game-engine">Game Engine Documentation</a></li>
+                <li><strong>For Filesystem Work:</strong> Check <a href="#eynfs">EYNFS Documentation</a></li>
+            </ul>
+        </section>
+
+        <section class="api-reference">
+            <h2>API Reference</h2>
+            <p>Complete API documentation for developers:</p>
+            <ul>
+                <li><strong>Header Files:</strong> Complete header file documentation</li>
+                <li><strong>Function Reference:</strong> All public API functions</li>
+                <li><strong>Data Structures:</strong> Important data structures and types</li>
+                <li><strong>System Calls:</strong> Kernel interface documentation</li>
+            </ul>
+        </section>
+
+        <section class="examples">
+            <h2>Examples and Tutorials</h2>
+            <p>Learn by example with these tutorials:</p>
+            <ul>
+                <li><strong>Creating Your First Game:</strong> Step-by-step game development</li>
+                <li><strong>Writing Assembly Programs:</strong> From "Hello World" to complex applications</li>
+                <li><strong>File System Operations:</strong> Working with files and directories</li>
+                <li><strong>System Programming:</strong> Interfacing with the kernel</li>
+            </ul>
+        </section>
+
+        <section class="documentation-notes">
+            <h2>Documentation Notes</h2>
+            <p>All documentation is included with EYN-OS Release 11 and can be accessed:</p>
+            <ul>
+                <li><strong>In-System:</strong> Use the <code>help</code> command for interactive documentation</li>
+                <li><strong>Offline:</strong> All documentation is available in the <code>/docs/</code> directory</li>
+                <li><strong>Online:</strong> This website provides web-based access to all documentation</li>
+            </ul>
+        </section>
+
+        <section class="doc-examples">
+            <h2>Documentation Examples</h2>
+            
+            <div class="doc-example">
+                <h3>Game Engine Example</h3>
+                <p>Here's an example of how to create a simple Snake game:</p>
+                <pre><code>title: Snake Game
+description: Classic snake game
+controls: WASD to move, Q to quit
+board_width: 20
+board_height: 15
+game_speed: 150
+max_entities: 10
+max_objects: 50
+start_level: 0
+
+[level]
+name: Snake Level
+width: 20
+height: 15
+
+[objects]
+wall: type=1, symbol=#, color=7, solid=1, collectible=0, damage=0, health=0, name=Wall
+food: type=3, symbol=*, color=2, solid=0, collectible=1, damage=0, health=0, name=Food
+
+[entities]
+player: x=10, y=7, direction=1, symbol=@, color=14, health=3, max_health=3, damage=1, speed=1, name=Player, controlled=1, ai_type=0</code></pre>
+            </div>
+
+            <div class="doc-example">
+                <h3>Assembler Example</h3>
+                <p>Here's a simple "Hello, World!" assembly program:</p>
+                <pre><code>; Simple "Hello, World!" program
+section .text
+global _start
+
+_start:
+    mov eax, 4          ; syscall number for write
+    mov ebx, 1          ; file descriptor (stdout)
+    mov ecx, message    ; message to write
+    mov edx, 13         ; message length
+    int 0x80            ; make syscall
+    
+    mov eax, 1          ; syscall number for exit
+    mov ebx, 0          ; exit code
+    int 0x80            ; make syscall
+
+section .data
+message:
+    db "Hello, World!", 10  ; 10 is newline</code></pre>
+            </div>
+
+            <div class="doc-example">
+                <h3>Math Utilities Example</h3>
+                <p>Using the random number generator and sorting functions:</p>
+                <pre><code>// Initialize random number generator
+rand_seed(12345);
+
+// Generate random numbers
+for (int i = 0; i < 10; i++) {
+    uint32_t num = rand_next();
+    printf("Random: %d\n", num);
+}
+
+// Generate numbers in range
+uint32_t random_choice = rand_range(0, 9);  // 0-9
+
+// Sort command list for help display
+char* commands[] = {"ls", "cd", "help", "exit", "clear"};
+int num_commands = 5;
+
+quicksort_strings(commands, 0, num_commands - 1);</code></pre>
+            </div>
+
+            <div class="doc-example">
+                <h3>Filesystem Commands</h3>
+                <p>Common filesystem operations in EYN-OS:</p>
+                <pre><code>ls              # List files and directories
+cd <dir>        # Change directory
+cd ..           # Go to parent directory
+cd /            # Go to root directory
+clear           # Clear screen
+
+# File operations
+read filename.txt    # Display file contents
+write newfile.txt   # Create and edit file
+copy source.txt dest.txt  # Copy file
+move file.txt /backup/    # Move file to directory
+del filename.txt     # Delete file
+deldir directory     # Delete directory
+makedir new_dir      # Create directory
+
+# Development
+assemble test.asm test.eyn  # Assemble code
+run program.eyn        # Execute program
+game snake             # Launch game</code></pre>
+            </div>
+        </section>
     </main>
 </body>
 </html> 

@@ -20,18 +20,48 @@
         </div>
     </nav>
     <main>
-        <h1>Download EYN-OS</h1>
-        <p><strong>Development Build:</strong> EYN-OS is under active development. Download the latest ISO and filesystem images below.</p>
-        <ul>
-            <li><a href="https://github.com/Hdev-Group/EYN-OS/raw/main/EYNOS.iso" download>EYNOS.iso</a> (bootable image)</li>
-            <li><a href="https://github.com/Hdev-Group/EYN-OS/raw/main/eynfs.img" download>eynfs.img</a> (filesystem image)</li>
-        </ul>
-        <h2>How to Run</h2>
-        <p><strong>With QEMU:</strong></p>
-        <pre>qemu-system-i386 -cdrom EYNOS.iso -hda tmp/boot/disk.img -hdb tmp/boot/eynfs.img -boot d</pre>
-        <p>Or simply run:</p>
-        <pre>make run</pre>
-        <p><strong>On Real Hardware:</strong> Flash the ISO to a USB drive and boot on compatible Intel i386 hardware.</p>
+        <h1>Download EYN-OS Release 11</h1>
+        <p><strong>Release 11 - Major Update:</strong> EYN-OS has received a massive update with new features including a generic 2D game engine, built-in assembler, advanced math utilities, and enhanced filesystem operations.</p>
+        
+        <section class="download-section">
+            <h2>Download Files</h2>
+            <ul>
+                <li><a href="EYNOS.iso" download>EYNOS.iso</a> (bootable image - 6.3MB)</li>
+                <li><a href="eynfs.img" download>eynfs.img</a> (filesystem image)</li>
+            </ul>
+        </section>
+
+        <section class="new-features">
+            <h2>What's New in Release 11</h2>
+            <ul>
+                <li><strong>Game Engine:</strong> Generic 2D game engine with human-readable text files, multiple game types (Snake, Maze, Generic), collision detection, AI, and health systems</li>
+                <li><strong>Assembler:</strong> Built-in NASM-compatible assembler for development</li>
+                <li><strong>Math Utilities:</strong> Random number generation, quicksort, Boyer-Moore search algorithm</li>
+                <li><strong>Enhanced Filesystem:</strong> Improved EYNFS with better file operations and large file support</li>
+                <li><strong>UI Improvements:</strong> Enhanced shell with command history, better TUI system</li>
+                <li><strong>Documentation:</strong> Comprehensive documentation system included</li>
+            </ul>
+        </section>
+
+        <section class="run-instructions">
+            <h2>How to Run</h2>
+            <p><strong>With QEMU:</strong></p>
+            <pre>qemu-system-i386 -cdrom EYNOS.iso -hda tmp/boot/disk.img -hdb tmp/boot/eynfs.img -boot d</pre>
+            <p>Or simply run:</p>
+            <pre>make run</pre>
+            <p><strong>On Real Hardware:</strong> Flash the ISO to a USB drive and boot on compatible Intel i386 hardware.</p>
+        </section>
+
+        <section class="system-requirements">
+            <h2>System Requirements</h2>
+            <ul>
+                <li><strong>Architecture:</strong> Intel x86 (32-bit)</li>
+                <li><strong>Minimum RAM:</strong> 1MB</li>
+                <li><strong>Recommended RAM:</strong> 4MB+</li>
+                <li><strong>Storage:</strong> Any size (EYNFS formatted)</li>
+                <li><strong>Boot Method:</strong> GRUB (Multiboot 1.0 compliant)</li>
+            </ul>
+        </section>
     </main>
 </body>
 </html> 

@@ -227,6 +227,183 @@ figcaption {
     font-family: 'IBM Plex Mono', 'Fira Mono', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
 }
 
+/* New styles for feature sections */
+.feature-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 3px solid #ffe600;
+    background: rgba(255, 230, 0, 0.05);
+}
+
+.feature-section h2 {
+    margin-top: 0;
+    color: #ffe600;
+}
+
+.feature-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.feature-section li {
+    margin: 0.5rem 0;
+}
+
+/* Documentation sections */
+.doc-overview {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+}
+
+.doc-sections {
+    margin: 2rem 0;
+}
+
+.doc-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.doc-section h3 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.doc-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.doc-section li {
+    margin: 0.5rem 0;
+}
+
+/* Download sections */
+.download-section, .new-features, .run-instructions, .system-requirements {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.download-section h2, .new-features h2, .run-instructions h2, .system-requirements h2 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.download-section ul, .new-features ul, .system-requirements ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.download-section li, .new-features li, .system-requirements li {
+    margin: 0.5rem 0;
+}
+
+/* Getting started and other sections */
+.getting-started, .api-reference, .examples, .documentation-notes {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #333;
+}
+
+.getting-started h2, .api-reference h2, .examples h2, .documentation-notes h2 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.getting-started ul, .api-reference ul, .examples ul, .documentation-notes ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.getting-started li, .api-reference li, .examples li, .documentation-notes li {
+    margin: 0.5rem 0;
+}
+
+.getting-started a {
+    color: #ffe600;
+    text-decoration: underline;
+}
+
+.getting-started a:hover {
+    color: #fff;
+}
+
+/* Documentation examples */
+.doc-examples {
+    margin: 2rem 0;
+}
+
+.doc-example {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.doc-example h3 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.doc-example p {
+    margin: 1rem 0;
+}
+
+.doc-example pre {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.doc-example code {
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    padding: 0;
+}
+
+.doc-examples h2 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+/* About page sections */
+.about-release, .about-philosophy, .about-technical, .about-contribution {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.about-release h2, .about-philosophy h2, .about-technical h2, .about-contribution h2 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.about-release ul, .about-philosophy ul, .about-technical ul, .about-contribution ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.about-release li, .about-philosophy li, .about-technical li, .about-contribution li {
+    margin: 0.5rem 0;
+}
+
+.about-release p, .about-philosophy p, .about-technical p, .about-contribution p {
+    margin: 1rem 0;
+}
+
 @media (max-width: 600px) {
     .nav-container, main {
         max-width: 100%;
@@ -237,5 +414,9 @@ figcaption {
     }
     .hero h1 {
         font-size: 1.2rem;
+    }
+    .feature-section, .doc-section, .download-section, .new-features, .run-instructions, .system-requirements, .getting-started, .api-reference, .examples, .documentation-notes, .doc-example, .about-release, .about-philosophy, .about-technical, .about-contribution {
+        padding: 1rem;
+        margin: 1rem 0;
     }
 } 
