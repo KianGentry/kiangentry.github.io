@@ -15,16 +15,32 @@
                 <li><a href="features.html">Features</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="docs.html">Docs</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <h1>EYN-OS Documentation - Release 11</h1>
+        <h1>EYN-OS Documentation - Release 13</h1>
         
         <section class="doc-overview">
             <h2>Comprehensive Documentation</h2>
-            <p>EYN-OS Release 11 includes extensive documentation covering all aspects of the operating system. Whether you're a user, developer, or just curious about how EYN-OS works, you'll find detailed information here.</p>
+            <p>EYN-OS Release 13 includes extensive documentation covering all aspects of the operating system. Whether you're a user, developer, or just curious about how EYN-OS works, you'll find detailed information here.</p>
+            <p><strong>Note:</strong> Complete documentation is included with EYN-OS and can be accessed using the <code>help</code> command within the system. The documentation below provides an overview of available topics.</p>
+        </section>
+
+        <section class="detailed-docs">
+            <h2>Detailed Documentation Pages</h2>
+            <p>For comprehensive information about specific EYN-OS components, see these detailed documentation pages:</p>
+            <div class="doc-links">
+                <div class="doc-link">
+                    <h3><a href="game-engine-docs.html">Game Engine Documentation</a></h3>
+                    <p>Complete guide to the generic 2D game engine, including architecture, file format specification, object system, entity management, and game development tutorials.</p>
+                </div>
+                <div class="doc-link">
+                    <h3><a href="assembler-docs.html">Assembler Documentation</a></h3>
+                    <p>Comprehensive guide to the built-in NASM-compatible assembler, including supported instructions, addressing modes, directives, and development workflow.</p>
+                </div>
+            </div>
         </section>
 
         <section class="doc-sections">
@@ -33,6 +49,7 @@
             <div class="doc-section">
                 <h3>Game Engine Documentation</h3>
                 <p><strong>Generic 2D Game Engine:</strong> Complete documentation for the new game engine system.</p>
+                <p>The EYN-OS game engine has been completely rewritten to support a generic 2D engine that can interpret human-readable text files. This replaces the old binary format with a more flexible and user-friendly approach.</p>
                 <ul>
                     <li><strong>Game Engine Overview:</strong> Architecture and design principles</li>
                     <li><strong>Game File Format:</strong> Human-readable text file specification</li>
@@ -42,11 +59,13 @@
                     <li><strong>Level Design:</strong> Creating custom game layouts</li>
                     <li><strong>Collision Detection:</strong> Object interaction and combat systems</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/applications/game-engine.md" target="_blank">Game Engine Documentation (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>Development Tools</h3>
                 <p><strong>Built-in Assembler:</strong> Complete guide to the NASM-compatible assembler.</p>
+                <p>EYN-OS includes a built-in NASM-compatible assembler that allows you to write and compile assembly code directly within the operating system. This provides a complete development environment without external tools.</p>
                 <ul>
                     <li><strong>Assembler Overview:</strong> Architecture and components</li>
                     <li><strong>Supported Instructions:</strong> x86 instruction set coverage</li>
@@ -56,11 +75,13 @@
                     <li><strong>Usage Examples:</strong> Complete assembly programs</li>
                     <li><strong>Error Handling:</strong> Common errors and debugging</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/tools/assembler.md" target="_blank">Assembler Documentation (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>Math Utilities</h3>
                 <p><strong>Mathematical Functions:</strong> Comprehensive math library documentation.</p>
+                <p>The math utilities provide essential algorithms and functions for development and system operations. These include random number generation, efficient sorting algorithms, and advanced search capabilities.</p>
                 <ul>
                     <li><strong>Random Number Generation:</strong> Linear Congruential Generator</li>
                     <li><strong>Sorting Algorithms:</strong> Quicksort implementation for strings</li>
@@ -68,11 +89,13 @@
                     <li><strong>Performance Characteristics:</strong> Algorithm efficiency and benchmarks</li>
                     <li><strong>Integration:</strong> How math utilities integrate with EYN-OS</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/utilities/math.md" target="_blank">Math Utilities Documentation (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>Filesystem Documentation</h3>
                 <p><strong>EYNFS and File Operations:</strong> Complete filesystem documentation.</p>
+                <p>EYN-OS features a custom filesystem (EYNFS) designed for simplicity and efficiency, along with FAT32 compatibility for existing filesystems. The filesystem layer provides comprehensive file operations and directory management.</p>
                 <ul>
                     <li><strong>EYNFS Specification:</strong> Native filesystem design and structure</li>
                     <li><strong>File Operations:</strong> Read, write, create, delete operations</li>
@@ -80,22 +103,26 @@
                     <li><strong>FAT32 Support:</strong> Compatibility with existing filesystems</li>
                     <li><strong>Filesystem Commands:</strong> Shell commands for file management</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/filesystems/eynfs.md" target="_blank">EYNFS Documentation (GitHub)</a> | <a href="EYN-OS/docs/filesystems/fat32.md" target="_blank">FAT32 Support (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>User Interface</h3>
                 <p><strong>Shell and TUI System:</strong> User interface documentation.</p>
+                <p>The user interface system provides a comprehensive command-line environment with a text user interface framework. This includes an enhanced shell with command history, interactive help system, and consistent TUI components.</p>
                 <ul>
                     <li><strong>Shell System:</strong> Command-line interface and commands</li>
                     <li><strong>TUI Framework:</strong> Text User Interface system</li>
                     <li><strong>Help System:</strong> Interactive documentation viewer</li>
                     <li><strong>Keyboard Handling:</strong> Input processing and shortcuts</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/ui/shell.md" target="_blank">Shell System (GitHub)</a> | <a href="EYN-OS/docs/ui/tui.md" target="_blank">TUI Framework (GitHub)</a> | <a href="EYN-OS/docs/ui/help.md" target="_blank">Help System (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>System Architecture</h3>
                 <p><strong>Core System Documentation:</strong> Low-level system information.</p>
+                <p>EYN-OS follows the philosophy of "reinventing the wheel" - building everything from scratch to understand and control every aspect of the system. The architecture is designed for educational value, full control, and simplicity.</p>
                 <ul>
                     <li><strong>System Overview:</strong> High-level architecture and design principles</li>
                     <li><strong>Boot Process:</strong> From GRUB to kernel initialization</li>
@@ -103,11 +130,13 @@
                     <li><strong>Interrupts & Exceptions:</strong> IDT, ISRs, and exception handling</li>
                     <li><strong>Hardware Support:</strong> Device drivers and hardware compatibility</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/system-overview.md" target="_blank">System Overview (GitHub)</a> | <a href="EYN-OS/docs/memory-management.md" target="_blank">Memory Management (GitHub)</a></p>
             </div>
 
             <div class="doc-section">
                 <h3>Quick Reference</h3>
                 <p><strong>Command Reference:</strong> Quick access to common commands and operations.</p>
+                <p>The quick reference provides immediate access to essential commands, file operations, and development tools. This serves as a fast lookup for common tasks and operations within EYN-OS.</p>
                 <ul>
                     <li><strong>Shell Commands:</strong> Complete command reference</li>
                     <li><strong>File Operations:</strong> Common file management tasks</li>
@@ -115,6 +144,7 @@
                     <li><strong>Development Commands:</strong> Assembler and development tools</li>
                     <li><strong>Troubleshooting:</strong> Common issues and solutions</li>
                 </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/quick-reference.md" target="_blank">Quick Reference (GitHub)</a> | <a href="EYN-OS/docs/command-reference.md" target="_blank">Command Reference (GitHub)</a></p>
             </div>
         </section>
 
@@ -123,8 +153,8 @@
             <p>New to EYN-OS? Start with these essential guides:</p>
             <ul>
                 <li><strong>For Users:</strong> Start with <a href="#system-overview">System Overview</a> and <a href="#shell-system">Shell System</a></li>
-                <li><strong>For Developers:</strong> Begin with <a href="#system-overview">System Overview</a> and <a href="#assembler">Assembler Documentation</a></li>
-                <li><strong>For Game Development:</strong> See <a href="#game-engine">Game Engine Documentation</a></li>
+                <li><strong>For Developers:</strong> Begin with <a href="#system-overview">System Overview</a> and <a href="assembler-docs.html">Assembler Documentation</a></li>
+                <li><strong>For Game Development:</strong> See <a href="game-engine-docs.html">Game Engine Documentation</a></li>
                 <li><strong>For Filesystem Work:</strong> Check <a href="#eynfs">EYNFS Documentation</a></li>
             </ul>
         </section>
@@ -138,6 +168,7 @@
                 <li><strong>Data Structures:</strong> Important data structures and types</li>
                 <li><strong>System Calls:</strong> Kernel interface documentation</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/api/headers.md" target="_blank">Header Files (GitHub)</a> | <a href="EYN-OS/docs/api/syscalls.md" target="_blank">System Calls (GitHub)</a></p>
         </section>
 
         <section class="examples">
@@ -151,13 +182,31 @@
             </ul>
         </section>
 
+        <section class="advanced-features">
+            <h2>Advanced Features</h2>
+            <p>EYN-OS includes several advanced features designed for performance and efficiency:</p>
+            
+            <div class="doc-section">
+                <h3>Predictive Memory System</h3>
+                <p><strong>Zero-Copy Memory Management:</strong> Advanced memory management system that predicts memory usage patterns and optimizes allocation strategies.</p>
+                <ul>
+                    <li><strong>Memory Prediction:</strong> Analyzes usage patterns to optimize allocation</li>
+                    <li><strong>Zero-Copy Operations:</strong> Minimizes memory copying for better performance</li>
+                    <li><strong>Efficient Allocation:</strong> Reduces fragmentation and improves memory utilization</li>
+                    <li><strong>Performance Monitoring:</strong> Tracks memory usage and performance metrics</li>
+                </ul>
+                <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/utilities/predictive-memory-zero-copy.md" target="_blank">Predictive Memory System (GitHub)</a></p>
+            </div>
+        </section>
+
         <section class="documentation-notes">
             <h2>Documentation Notes</h2>
-            <p>All documentation is included with EYN-OS Release 11 and can be accessed:</p>
+            <p>All documentation is included with EYN-OS Release 13 and can be accessed:</p>
             <ul>
                 <li><strong>In-System:</strong> Use the <code>help</code> command for interactive documentation</li>
                 <li><strong>Offline:</strong> All documentation is available in the <code>/docs/</code> directory</li>
                 <li><strong>Online:</strong> This website provides web-based access to all documentation</li>
+                <li><strong>GitHub:</strong> Complete documentation source is available in the EYN-OS repository</li>
             </ul>
         </section>
 

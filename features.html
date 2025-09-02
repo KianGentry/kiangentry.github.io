@@ -15,16 +15,17 @@
                 <li><a href="features.html">Features</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="docs.html">Docs</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
     </nav>
     <main>
-        <h1>Features - Release 11</h1>
+        <h1>Features - Release 13</h1>
         
         <section class="feature-section">
             <h2>Game Engine</h2>
             <p><strong>Generic 2D Game Engine:</strong> EYN-OS now includes a powerful game engine that supports human-readable text file formats. Create and play multiple game types including Snake, Maze Runner, and custom games with configurable objects, entities, and AI.</p>
+            <p>The game engine has been completely rewritten to support a generic 2D engine that can interpret human-readable text files. This replaces the old binary format with a more flexible and user-friendly approach, making game creation accessible to users without programming experience.</p>
             <ul>
                 <li>Human-readable text file format for easy game creation</li>
                 <li>Multiple game types: Snake, Maze, Generic</li>
@@ -35,11 +36,13 @@
                 <li>Arrow key and WASD support</li>
                 <li>Level-based games with custom layouts</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/applications/game-engine.md" target="_blank">Game Engine Documentation (GitHub)</a> | <a href="game-engine-docs.html">Detailed Web Documentation</a></p>
         </section>
 
         <section class="feature-section">
             <h2>Development Tools</h2>
             <p><strong>Built-in Assembler:</strong> EYN-OS includes a NASM-compatible assembler that allows you to write and compile assembly code directly within the operating system.</p>
+            <p>The built-in assembler provides a complete development environment without external tools. It supports the full x86 instruction set and generates EYN executable format files that can be run directly within the operating system.</p>
             <ul>
                 <li>NASM-compatible syntax</li>
                 <li>Support for basic x86 instructions (mov, add, sub, jmp, call, ret, int)</li>
@@ -48,11 +51,13 @@
                 <li>Generates EYN executable format</li>
                 <li>Complete development environment without external tools</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/tools/assembler.md" target="_blank">Assembler Documentation (GitHub)</a> | <a href="assembler-docs.html">Detailed Web Documentation</a></p>
         </section>
 
         <section class="feature-section">
             <h2>Math Utilities</h2>
             <p><strong>Advanced Mathematical Functions:</strong> Comprehensive math library including random number generation, sorting algorithms, and search functions.</p>
+            <p>The math utilities provide essential algorithms and functions for development and system operations. These include efficient random number generation using a Linear Congruential Generator, fast sorting with Quicksort, and advanced search capabilities with the Boyer-Moore algorithm.</p>
             <ul>
                 <li>Linear Congruential Generator for random numbers</li>
                 <li>Quicksort implementation for string arrays</li>
@@ -60,11 +65,13 @@
                 <li>Range-based random number generation</li>
                 <li>Efficient memory usage for low-end systems</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/utilities/math.md" target="_blank">Math Utilities Documentation (GitHub)</a></p>
         </section>
 
         <section class="feature-section">
             <h2>Enhanced Filesystem</h2>
             <p><strong>EYNFS with Advanced Operations:</strong> Improved filesystem with better file handling and operations.</p>
+            <p>EYN-OS features a custom filesystem (EYNFS) designed for simplicity and efficiency, along with FAT32 compatibility for existing filesystems. The filesystem layer provides comprehensive file operations and directory management with improved performance and reliability.</p>
             <ul>
                 <li>Custom EYNFS filesystem with improved performance</li>
                 <li>Advanced file operations (copy, move, delete)</li>
@@ -72,11 +79,13 @@
                 <li>Support for large files (fixed truncation issues)</li>
                 <li>FAT32 compatibility for existing filesystems</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/filesystems/eynfs.md" target="_blank">EYNFS Documentation (GitHub)</a> | <a href="EYN-OS/docs/filesystems/fat32.md" target="_blank">FAT32 Support (GitHub)</a></p>
         </section>
 
         <section class="feature-section">
             <h2>User Interface</h2>
             <p><strong>Enhanced Shell and TUI:</strong> Improved user interface with better command handling and text user interface system.</p>
+            <p>The user interface system provides a comprehensive command-line environment with a text user interface framework. This includes an enhanced shell with command history, interactive help system, and consistent TUI components for all applications.</p>
             <ul>
                 <li>Command history with arrow key navigation</li>
                 <li>Interactive help system</li>
@@ -84,6 +93,7 @@
                 <li>Consistent TUI framework for all applications</li>
                 <li>Color support and keyboard handling</li>
             </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/ui/shell.md" target="_blank">Shell System (GitHub)</a> | <a href="EYN-OS/docs/ui/tui.md" target="_blank">TUI Framework (GitHub)</a> | <a href="EYN-OS/docs/ui/help.md" target="_blank">Help System (GitHub)</a></p>
         </section>
 
         <section class="feature-section">
@@ -94,6 +104,20 @@
                 <li><strong>Enhanced Shell:</strong> The OS includes an improved shell with familiar commands, command history, and comprehensive help system.</li>
                 <li><strong>Runs on Real Hardware and QEMU:</strong> Bootable via QEMU or from a USB stick on real Intel i386 hardware.</li>
             </ul>
+        </section>
+
+        <section class="feature-section">
+            <h2>Advanced Memory Management</h2>
+            <p><strong>Predictive Memory System:</strong> EYN-OS includes an advanced memory management system that predicts memory usage patterns and optimizes allocation strategies for better performance.</p>
+            <p>The predictive memory system analyzes usage patterns to optimize memory allocation, reducing fragmentation and improving overall system performance. It includes zero-copy operations and efficient allocation strategies designed for low-end systems.</p>
+            <ul>
+                <li>Memory usage pattern analysis and prediction</li>
+                <li>Zero-copy memory operations for better performance</li>
+                <li>Efficient allocation strategies to reduce fragmentation</li>
+                <li>Memory leak detection and prevention</li>
+                <li>Performance monitoring and optimization</li>
+            </ul>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/utilities/predictive-memory-zero-copy.md" target="_blank">Predictive Memory System (GitHub)</a></p>
         </section>
 
         <div class="screenshot-section">

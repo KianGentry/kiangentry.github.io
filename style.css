@@ -252,9 +252,6 @@ figcaption {
 /* Documentation sections */
 .doc-overview {
     margin: 2rem 0;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid #333;
 }
 
 .doc-sections {
@@ -418,5 +415,248 @@ figcaption {
     .feature-section, .doc-section, .download-section, .new-features, .run-instructions, .system-requirements, .getting-started, .api-reference, .examples, .documentation-notes, .doc-example, .about-release, .about-philosophy, .about-technical, .about-contribution {
         padding: 1rem;
         margin: 1rem 0;
+    }
+}
+
+/* Blog System Styles */
+.blog-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+    color: #e0e0e0;
+}
+
+.blog-posts {
+    margin: 2rem 0;
+}
+
+.blog-post {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    border-color: #ffe600;
+    background: rgba(255, 230, 0, 0.05);
+}
+
+.post-header h2 {
+    margin: 0 0 1rem 0;
+    color: #ffe600;
+}
+
+.post-header h2 a {
+    color: #ffe600;
+    text-decoration: none;
+}
+
+.post-header h2 a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.post-meta {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.post-meta span {
+    margin-right: 1rem;
+}
+
+.post-meta .post-tags {
+    color: #666;
+}
+
+.post-excerpt {
+    line-height: 1.6;
+}
+
+.post-excerpt p {
+    margin: 1rem 0;
+}
+
+.post-excerpt ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.post-excerpt li {
+    margin: 0.5rem 0;
+}
+
+.read-more {
+    color: #ffe600;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.blog-navigation {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.blog-categories h3 {
+    color: #ffe600;
+    margin-top: 0;
+}
+
+.blog-categories ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.blog-categories li {
+    margin: 0.5rem 0;
+}
+
+/* Full Blog Post Styles */
+.blog-post-full {
+    margin: 2rem 0;
+}
+
+.post-header-full h1 {
+    color: #ffe600;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.post-meta-full {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: #999;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.post-meta-full span {
+    margin-right: 1.5rem;
+}
+
+.post-meta-full .post-author {
+    color: #ffe600;
+}
+
+.post-content {
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.post-intro {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid #ffe600;
+}
+
+.post-content h2 {
+    color: #ffe600;
+    margin: 2rem 0 1rem 0;
+    font-size: 1.5rem;
+}
+
+.post-content h3 {
+    color: #ffe600;
+    margin: 1.5rem 0 0.8rem 0;
+    font-size: 1.2rem;
+}
+
+.post-content p {
+    margin: 1rem 0;
+}
+
+.post-content ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.post-content li {
+    margin: 0.5rem 0;
+}
+
+.post-content strong {
+    color: #ffe600;
+}
+
+.post-footer {
+    margin: 3rem 0;
+    padding: 1.5rem;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.post-footer p {
+    margin: 0.5rem 0;
+}
+
+.post-footer a {
+    color: #ffe600;
+    text-decoration: none;
+}
+
+.post-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.post-navigation {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-top: 1px solid #333;
+}
+
+.post-navigation .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.post-navigation a {
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.post-navigation a:hover {
+    border-color: #ffe600;
+    background: #ffe600;
+    color: #1a1a1a;
+}
+
+/* Mobile responsiveness for blog */
+@media (max-width: 600px) {
+    .blog-post, .blog-navigation, .post-footer {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .post-header-full h1 {
+        font-size: 1.8rem;
+    }
+    
+    .post-navigation .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .post-meta-full span {
+        display: block;
+        margin-bottom: 0.5rem;
     }
 } 

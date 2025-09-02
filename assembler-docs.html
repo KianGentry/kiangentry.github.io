@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYN-OS - Assembler Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <span class="logo">EYN-OS</span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>EYN-OS Built-in Assembler Documentation - Release 13</h1>
+        
+        <section class="doc-overview">
+            <h2>Assembler Overview</h2>
+            <p>EYN-OS includes a built-in NASM-compatible assembler that allows you to write and compile assembly code directly within the operating system. This provides a complete development environment without external tools, enabling native development and system programming within EYN-OS.</p>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/tools/assembler.md" target="_blank">Assembler Documentation (GitHub)</a></p>
+        </section>
+
+        <section class="assembler-architecture">
+            <h2>Assembler Architecture & Design Philosophy</h2>
+            
+            <h3>Core Design Principles</h3>
+            <p>The assembler follows EYN-OS's philosophy of simplicity and self-containment:</p>
+            <ul>
+                <li><strong>NASM Compatibility:</strong> Familiar syntax for developers already using NASM</li>
+                <li><strong>Self-Contained:</strong> No external dependencies or tools required</li>
+                <li><strong>Educational Focus:</strong> Clear error messages and helpful feedback</li>
+                <li><strong>Performance Optimized:</strong> Efficient parsing and code generation</li>
+            </ul>
+
+            <h3>System Components</h3>
+            <p>The assembler consists of several key components:</p>
+            <ul>
+                <li><strong>Lexical Analyzer:</strong> Tokenizes assembly source code</li>
+                <li><strong>Parser:</strong> Analyzes syntax and builds parse trees</li>
+                <li><strong>Symbol Table:</strong> Manages labels, variables, and forward references</li>
+                <li><strong>Code Generator:</strong> Converts assembly to machine code</li>
+                <li><strong>Linker:</strong> Resolves symbols and generates executable files</li>
+                <li><strong>Error Handler:</strong> Provides clear error messages and suggestions</li>
+            </ul>
+        </section>
+
+        <section class="supported-instructions">
+            <h2>Supported Instructions</h2>
+            
+            <h3>Data Transfer Instructions</h3>
+            <p>Core data movement operations:</p>
+            <ul>
+                <li><strong>mov:</strong> Move data between registers, memory, and immediate values</li>
+                <li><strong>push:</strong> Push value onto stack</li>
+                <li><strong>pop:</strong> Pop value from stack</li>
+                <li><strong>xchg:</strong> Exchange values between operands</li>
+            </ul>
+
+            <h3>Arithmetic Instructions</h3>
+            <p>Mathematical operations:</p>
+            <ul>
+                <li><strong>add:</strong> Add operands</li>
+                <li><strong>sub:</strong> Subtract operands</li>
+                <li><strong>inc:</strong> Increment operand</li>
+                <li><strong>dec:</strong> Decrement operand</li>
+                <li><strong>mul:</strong> Multiply operands</li>
+                <li><strong>div:</strong> Divide operands</li>
+            </ul>
+
+            <h3>Logical Instructions</h3>
+            <p>Bitwise operations:</p>
+            <ul>
+                <li><strong>and:</strong> Bitwise AND</li>
+                <li><strong>or:</strong> Bitwise OR</li>
+                <li><strong>xor:</strong> Bitwise XOR</li>
+                <li><strong>not:</strong> Bitwise NOT</li>
+                <li><strong>shl:</strong> Shift left</li>
+                <li><strong>shr:</strong> Shift right</li>
+            </ul>
+
+            <h3>Control Flow Instructions</h3>
+            <p>Program flow control:</p>
+            <ul>
+                <li><strong>jmp:</strong> Unconditional jump</li>
+                <li><strong>je/jz:</strong> Jump if equal/zero</li>
+                <li><strong>jne/jnz:</strong> Jump if not equal/not zero</li>
+                <li><strong>call:</strong> Call subroutine</li>
+                <li><strong>ret:</strong> Return from subroutine</li>
+                <li><strong>loop:</strong> Loop with counter</li>
+            </ul>
+
+            <h3>System Instructions</h3>
+            <p>System-level operations:</p>
+            <ul>
+                <li><strong>int:</strong> Software interrupt</li>
+                <li><strong>iret:</strong> Return from interrupt</li>
+                <li><strong>cli:</strong> Clear interrupt flag</li>
+                <li><strong>sti:</strong> Set interrupt flag</li>
+            </ul>
+        </section>
+
+        <section class="addressing-modes">
+            <h2>Addressing Modes</h2>
+            
+            <h3>Register Addressing</h3>
+            <p>Direct register access:</p>
+            <ul>
+                <li><strong>General Purpose:</strong> eax, ebx, ecx, edx, esi, edi, esp, ebp</li>
+                <li><strong>8-bit Registers:</strong> al, ah, bl, bh, cl, ch, dl, dh</li>
+                <li><strong>16-bit Registers:</strong> ax, bx, cx, dx, si, di, sp, bp</li>
+            </ul>
+
+            <h3>Immediate Addressing</h3>
+            <p>Direct value specification:</p>
+            <ul>
+                <li><strong>Decimal:</strong> 42, 100, 255</li>
+                <li><strong>Hexadecimal:</strong> 0x2A, 0x64, 0xFF</li>
+                <li><strong>Binary:</strong> 0b101010, 0b1100100</li>
+                <li><strong>Character:</strong> 'A', 'Z', '0'</li>
+            </ul>
+
+            <h3>Memory Addressing</h3>
+            <p>Memory access patterns:</p>
+            <ul>
+                <li><strong>Direct:</strong> [label], [0x1000]</li>
+                <li><strong>Register Indirect:</strong> [eax], [ebx]</li>
+                <li><strong>Base + Index:</strong> [eax + ebx]</li>
+                <li><strong>Base + Index + Displacement:</strong> [eax + ebx + 4]</li>
+            </ul>
+        </section>
+
+        <section class="directives">
+            <h2>Assembler Directives</h2>
+            
+            <h3>Section Directives</h3>
+            <p>Memory layout control:</p>
+            <ul>
+                <li><strong>section .text:</strong> Code section</li>
+                <li><strong>section .data:</strong> Data section</li>
+                <li><strong>section .bss:</strong> Uninitialized data section</li>
+            </ul>
+
+            <h3>Data Directives</h3>
+            <p>Data definition:</p>
+            <ul>
+                <li><strong>db:</strong> Define byte (8-bit)</li>
+                <li><strong>dw:</strong> Define word (16-bit)</li>
+                <li><strong>dd:</strong> Define double word (32-bit)</li>
+                <li><strong>dq:</strong> Define quad word (64-bit)</li>
+            </ul>
+
+            <h3>Symbol Directives</h3>
+            <p>Symbol and label management:</p>
+            <ul>
+                <li><strong>global:</strong> Export symbol for linking</li>
+                <li><strong>extern:</strong> Import external symbol</li>
+                <li><strong>equ:</strong> Define constant</li>
+                <li><strong>times:</strong> Repeat directive</li>
+            </ul>
+        </section>
+
+        <section class="labels-and-symbols">
+            <h2>Labels and Symbols</h2>
+            
+            <h3>Label Definition</h3>
+            <p>Labels provide symbolic names for memory locations:</p>
+            <ul>
+                <li><strong>Code Labels:</strong> Define entry points and jump targets</li>
+                <li><strong>Data Labels:</strong> Reference data locations</li>
+                <li><strong>Local Labels:</strong> Scope-limited labels</li>
+            </ul>
+
+            <h3>Symbol Resolution</h3>
+            <p>The assembler handles symbol resolution automatically:</p>
+            <ul>
+                <li><strong>Forward References:</strong> Labels can be used before definition</li>
+                <li><strong>Multiple Passes:</strong> Two-pass assembly resolves all references</li>
+                <li><strong>Error Checking:</strong> Undefined symbols generate clear error messages</li>
+            </ul>
+
+            <h3>Example Labels</h3>
+            <pre><code>_start:          ; Entry point label
+    mov eax, 4   ; System call number
+    mov ebx, 1   ; File descriptor
+    mov ecx, msg ; Message address
+    mov edx, len ; Message length
+    int 0x80     ; Make system call
+
+msg: db "Hello, World!", 10  ; Data label
+len: equ $ - msg              ; Length constant</code></pre>
+        </section>
+
+        <section class="executable-format">
+            <h2>EYN Executable Format</h2>
+            
+            <h3>Format Overview</h3>
+            <p>The assembler generates EYN executable format files:</p>
+            <ul>
+                <li><strong>Custom Format:</strong> Designed specifically for EYN-OS</li>
+                <li><strong>Simple Structure:</strong> Easy to parse and load</li>
+                <strong>Memory Efficient:</strong> Minimal overhead for small programs</li>
+            </ul>
+
+            <h3>File Structure</h3>
+            <p>EYN files contain:</p>
+            <ul>
+                <li><strong>Header:</strong> Magic number and file information</li>
+                <li><strong>Code Section:</strong> Machine code instructions</li>
+                <li><strong>Data Section:</strong> Program data and constants</li>
+                <li><strong>Symbol Table:</strong> Debugging and linking information</li>
+            </ul>
+
+            <h3>Loading and Execution</h3>
+            <p>Programs are loaded by the EYN-OS kernel:</p>
+            <ul>
+                <li><strong>Memory Allocation:</strong> Kernel allocates memory for the program</li>
+                <li><strong>Code Loading:</strong> Instructions are loaded into memory</li>
+                <li><strong>Execution:</strong> Program runs in user space with kernel protection</li>
+            </ul>
+        </section>
+
+        <section class="usage-examples">
+            <h2>Usage Examples</h2>
+            
+            <h3>Hello World Program</h3>
+            <p>A complete "Hello, World!" program:</p>
+            <pre><code>; Simple "Hello, World!" program
+section .text
+global _start
+
+_start:
+    mov eax, 4          ; syscall number for write
+    mov ebx, 1          ; file descriptor (stdout)
+    mov ecx, message    ; message to write
+    mov edx, 13         ; message length
+    int 0x80            ; make syscall
+    
+    mov eax, 1          ; syscall number for exit
+    mov ebx, 0          ; exit code
+    int 0x80            ; make syscall
+
+section .data
+message:
+    db "Hello, World!", 10  ; 10 is newline</code></pre>
+
+            <h3>Simple Calculator</h3>
+            <p>A basic addition program:</p>
+            <pre><code>; Simple addition calculator
+section .text
+global _start
+
+_start:
+    mov eax, 5          ; Load first number
+    mov ebx, 3          ; Load second number
+    add eax, ebx        ; Add them together
+    
+    ; Convert result to string and display
+    ; (simplified for example)
+    
+    mov eax, 1          ; Exit
+    mov ebx, 0
+    int 0x80</code></pre>
+
+            <h3>Loop Example</h3>
+            <p>Demonstrating loop control:</p>
+            <pre><code>; Count from 1 to 10
+section .text
+global _start
+
+_start:
+    mov ecx, 10         ; Counter
+    mov eax, 1          ; Current number
+
+loop_start:
+    ; Display current number (simplified)
+    inc eax             ; Increment number
+    loop loop_start     ; Decrement counter and loop
+    
+    mov eax, 1          ; Exit
+    mov ebx, 0
+    int 0x80</code></pre>
+        </section>
+
+        <section class="error-handling">
+            <h2>Error Handling and Debugging</h2>
+            
+            <h3>Common Errors</h3>
+            <p>Typical assembly errors and solutions:</p>
+            <ul>
+                <li><strong>Undefined Symbol:</strong> Check label spelling and definition</li>
+                <li><strong>Invalid Instruction:</strong> Verify instruction syntax and operands</li>
+                <li><strong>Addressing Error:</strong> Check memory addressing syntax</li>
+                <li><strong>Section Error:</strong> Ensure proper section declarations</li>
+            </ul>
+
+            <h3>Error Messages</h3>
+            <p>The assembler provides clear error information:</p>
+            <ul>
+                <li><strong>Line Numbers:</strong> Exact location of errors</li>
+                <li><strong>Error Descriptions:</strong> Clear explanation of the problem</li>
+                <li><strong>Suggestions:</strong> Helpful hints for fixing issues</li>
+            </ul>
+
+            <h3>Debugging Tips</h3>
+            <ul>
+                <li><strong>Start Simple:</strong> Begin with basic programs</li>
+                <li><strong>Test Incrementally:</strong> Add features one at a time</li>
+                <li><strong>Use Comments:</strong> Document your code clearly</li>
+                <li><strong>Check Syntax:</strong> Verify instruction format</li>
+            </ul>
+        </section>
+
+        <section class="integration">
+            <h2>Integration with EYN-OS</h2>
+            
+            <h3>Development Workflow</h3>
+            <p>The assembler integrates seamlessly with the operating system:</p>
+            <ul>
+                <li><strong>Built-in Access:</strong> Available directly from the shell</li>
+                <li><strong>File Integration:</strong> Works with EYNFS filesystem</li>
+                <li><strong>Immediate Testing:</strong> Run programs right after assembly</li>
+                <li><strong>No External Tools:</strong> Complete development environment</li>
+            </ul>
+
+            <h3>Shell Commands</h3>
+            <p>Assembler usage from the command line:</p>
+            <ul>
+                <li><strong>assemble:</strong> Assemble source files</li>
+                <li><strong>run:</strong> Execute assembled programs</li>
+                <li><strong>list:</strong> View program listings</li>
+                <li><strong>help:</strong> Get assembler help</li>
+            </ul>
+
+            <h3>Example Workflow</h3>
+            <pre><code># Create assembly source file
+write hello.asm
+
+# Assemble the program
+assemble hello.asm hello.eyn
+
+# Run the program
+run hello.eyn
+
+# Check for errors
+list hello.asm</code></pre>
+        </section>
+
+        <section class="performance">
+            <h2>Performance and Optimization</h2>
+            
+            <h3>Assembly Optimization</h3>
+            <p>Tips for writing efficient assembly code:</p>
+            <ul>
+                <li><strong>Register Usage:</strong> Minimize memory access</li>
+                <li><strong>Instruction Selection:</strong> Choose optimal instructions</li>
+                <li><strong>Loop Optimization:</strong> Efficient loop structures</li>
+                <li><strong>Memory Access:</strong> Optimize data layout</li>
+            </ul>
+
+            <h3>Compiler Features</h3>
+            <p>The assembler includes optimization features:</p>
+            <ul>
+                <li><strong>Constant Folding:</strong> Evaluates constant expressions</li>
+                <li><strong>Dead Code Elimination:</strong> Removes unused code</li>
+                <li><strong>Symbol Optimization:</strong> Efficient symbol resolution</li>
+                <li><strong>Memory Layout:</strong> Optimized section placement</li>
+            </ul>
+        </section>
+
+        <section class="advanced-features">
+            <h2>Advanced Features</h2>
+            
+            <h3>Macro Support</h3>
+            <p>Basic macro capabilities for code reuse:</p>
+            <ul>
+                <li><strong>Simple Macros:</strong> Text substitution</li>
+                <li><strong>Parameter Support:</strong> Macro arguments</li>
+                <li><strong>Conditional Assembly:</strong> Include/exclude code sections</li>
+            </ul>
+
+            <h3>Conditional Assembly</h3>
+            <p>Conditional compilation features:</p>
+            <ul>
+                <li><strong>if/else:</strong> Conditional code inclusion</li>
+                <li><strong>repeat:</strong> Code repetition</li>
+                <li><strong>include:</strong> File inclusion</li>
+            </ul>
+
+            <h3>Debug Information</h3>
+            <p>Support for debugging and development:</p>
+            <ul>
+                <li><strong>Symbol Tables:</strong> Debug symbol information</li>
+                <li><strong>Line Numbers:</strong> Source line mapping</li>
+                <li><strong>Variable Information:</strong> Data symbol details</li>
+            </ul>
+        </section>
+
+        <section class="documentation-notes">
+            <h2>Additional Resources</h2>
+            <p>For complete technical details and advanced features:</p>
+            <ul>
+                <li><strong>GitHub Documentation:</strong> <a href="EYN-OS/docs/tools/assembler.md" target="_blank">Complete Assembler Documentation</a></li>
+                <li><strong>Source Code:</strong> <a href="EYN-OS/src/utilities/shell/assemble.c" target="_blank">Assembler Source Code</a></li>
+                <li><strong>Header Files:</strong> <a href="EYN-OS/include/assemble.h" target="_blank">Assembler Headers</a></li>
+                <li><strong>Example Programs:</strong> <a href="EYN-OS/testdir/" target="_blank">Sample Assembly Programs</a></li>
+                <li><strong>Command Reference:</strong> <a href="EYN-OS/docs/command-reference.md" target="_blank">Shell Commands</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

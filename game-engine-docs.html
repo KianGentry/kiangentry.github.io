@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EYN-OS - Game Engine Documentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <span class="logo">EYN-OS</span>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <h1>EYN-OS Game Engine Documentation - Release 13</h1>
+        
+        <section class="doc-overview">
+            <h2>Game Engine Overview</h2>
+            <p>The EYN-OS game engine has been completely rewritten to support a generic 2D engine that can interpret human-readable text files. This replaces the old binary format with a more flexible and user-friendly approach, making game creation accessible to users without programming experience.</p>
+            <p><strong>Complete Documentation:</strong> <a href="EYN-OS/docs/applications/game-engine.md" target="_blank">Game Engine Documentation (GitHub)</a></p>
+        </section>
+
+        <section class="engine-architecture">
+            <h2>Engine Architecture & Design Philosophy</h2>
+            
+            <h3>Core Design Principles</h3>
+            <p>The game engine follows EYN-OS's philosophy of simplicity and accessibility:</p>
+            <ul>
+                <li><strong>Human-Readable Format:</strong> Games are defined in plain text files, eliminating the need for binary editors or complex tools</li>
+                <li><strong>Modular Design:</strong> Separate systems for objects, entities, levels, and game logic</li>
+                <li><strong>Extensible Framework:</strong> Easy to add new game types and features</li>
+                <li><strong>Performance Optimized:</strong> Designed for low-end systems with limited resources</li>
+            </ul>
+
+            <h3>System Components</h3>
+            <p>The engine consists of several key components:</p>
+            <ul>
+                <li><strong>Game Parser:</strong> Interprets human-readable text files and converts them to game data structures</li>
+                <li><strong>Object System:</strong> Manages static objects like walls, doors, and collectibles</li>
+                <li><strong>Entity System:</strong> Handles dynamic objects like players, enemies, and NPCs</li>
+                <li><strong>Collision Detection:</strong> Provides efficient collision checking between objects and entities</li>
+                <li><strong>AI System:</strong> Simple AI behaviors for non-player entities</li>
+                <li><strong>Game Loop:</strong> Manages game state, input processing, and rendering</li>
+            </ul>
+        </section>
+
+        <section class="game-file-format">
+            <h2>Game File Format Specification</h2>
+            
+            <h3>File Structure</h3>
+            <p>Games are defined in `.txt` files with a structured format that's easy to read and modify:</p>
+            
+            <h4>Global Configuration</h4>
+            <p>Each game file begins with global settings that define the overall game parameters:</p>
+            <pre><code>title: Game Title
+description: Game description
+controls: Control instructions
+board_width: 20
+board_height: 15
+game_speed: 150
+max_entities: 10
+max_objects: 50
+start_level: 0</code></pre>
+
+            <h4>Level Definition</h4>
+            <p>Levels are defined with sections for objects, entities, and layout:</p>
+            <pre><code>[level]
+name: Level Name
+width: 20
+height: 15
+
+[objects]
+wall: type=1, symbol=#, color=7, solid=1, collectible=0, damage=0, health=0, name=Wall
+food: type=3, symbol=*, color=2, solid=0, collectible=1, damage=0, health=0, name=Food
+
+[entities]
+player: x=10, y=7, direction=1, symbol=@, color=14, health=3, max_health=3, damage=1, speed=1, name=Player, controlled=1, ai_type=0
+enemy: x=5, y=5, direction=0, symbol=G, color=4, health=2, max_health=2, damage=1, speed=2, name=Goblin, controlled=0, ai_type=1
+
+[layout]
+00000000000000000000
+01111111111111111110
+01000000000000000010
+01000000000000000010
+01111111111111111110</code></pre>
+        </section>
+
+        <section class="object-system">
+            <h2>Object System</h2>
+            
+            <h3>Object Types</h3>
+            <p>The engine supports several predefined object types:</p>
+            <ul>
+                <li><strong>Type 0:</strong> Empty space - walkable area</li>
+                <li><strong>Type 1:</strong> Wall - solid, blocks movement</li>
+                <li><strong>Type 3:</strong> Food - collectible item</li>
+                <li><strong>Type 6:</strong> Door - solid, may require keys</li>
+                <li><strong>Type 7:</strong> Key - collectible, opens doors</li>
+                <li><strong>Type 8:</strong> Exit - win condition</li>
+            </ul>
+
+            <h3>Object Properties</h3>
+            <p>Each object can have various properties:</p>
+            <ul>
+                <li><strong>symbol:</strong> Display character (e.g., #, *, @)</li>
+                <li><strong>color:</strong> Display color (0-15, VGA color palette)</li>
+                <li><strong>solid:</strong> Whether the object blocks movement</li>
+                <li><strong>collectible:</strong> Whether the object can be picked up</li>
+                <li><strong>damage:</strong> Damage dealt on contact</li>
+                <li><strong>health:</strong> Object's health points</li>
+                <li><strong>name:</strong> Human-readable name for the object</li>
+            </ul>
+        </section>
+
+        <section class="entity-system">
+            <h2>Entity System</h2>
+            
+            <h3>Entity Properties</h3>
+            <p>Entities are dynamic objects that can move and interact:</p>
+            <ul>
+                <li><strong>x, y:</strong> Position coordinates on the game board</li>
+                <li><strong>direction:</strong> Facing direction (0=up, 1=right, 2=down, 3=left)</li>
+                <li><strong>symbol:</strong> Display character</li>
+                <li><strong>color:</strong> Display color</li>
+                <li><strong>health:</strong> Current health points</li>
+                <li><strong>max_health:</strong> Maximum health capacity</li>
+                <li><strong>damage:</strong> Attack damage</li>
+                <li><strong>speed:</strong> Movement speed</li>
+                <li><strong>controlled:</strong> Player controlled (1) or AI (0)</li>
+                <li><strong>ai_type:</strong> AI behavior type</li>
+            </ul>
+
+            <h3>AI System</h3>
+            <p>The engine includes simple AI behaviors for non-player entities:</p>
+            <ul>
+                <li><strong>AI Type 0:</strong> Static entities (no movement)</li>
+                <li><strong>AI Type 1:</strong> Basic enemy AI (simple movement patterns)</li>
+                <li><strong>AI Type 2:</strong> Advanced enemy AI (pathfinding and pursuit)</li>
+            </ul>
+        </section>
+
+        <section class="game-types">
+            <h2>Supported Game Types</h2>
+            
+            <h3>Snake Game</h3>
+            <p>The engine automatically detects Snake games by title and applies special logic:</p>
+            <ul>
+                <li><strong>Continuous Movement:</strong> Snake moves automatically in the current direction</li>
+                <li><strong>Direction-Based Input:</strong> WASD/Arrow keys change direction, snake continues moving</li>
+                <li><strong>Food System:</strong> Food spawns randomly and respawns when eaten</li>
+                <li><strong>Growth Mechanics:</strong> Snake grows when eating food, score increases</li>
+                <li><strong>Collision Detection:</strong> Wall and self-collision cause game over</li>
+            </ul>
+
+            <h3>Maze Runner</h3>
+            <p>Maze games focus on exploration and puzzle-solving:</p>
+            <ul>
+                <li><strong>Level-Based Design:</strong> Multiple levels with increasing difficulty</li>
+                <li><strong>Key and Door System:</strong> Collect keys to unlock doors</li>
+                <li><strong>Exit Conditions:</strong> Reach the exit to complete the level</li>
+                <li><strong>Enemy Avoidance:</strong> Navigate around enemies while solving puzzles</li>
+            </ul>
+
+            <h3>Generic Games</h3>
+            <p>The engine supports custom game types with flexible rules:</p>
+            <ul>
+                <li><strong>Custom Objectives:</strong> Define win/lose conditions</li>
+                <li><strong>Flexible Rules:</strong> Customize game mechanics and behavior</li>
+                <li><strong>Modular Design:</strong> Easy to add new game types</li>
+            </ul>
+        </section>
+
+        <section class="controls">
+            <h2>Controls & Input</h2>
+            
+            <h3>Movement Controls</h3>
+            <p>The engine supports multiple control schemes:</p>
+            <ul>
+                <li><strong>WASD Keys:</strong> W (up), A (left), S (down), D (right)</li>
+                <li><strong>Arrow Keys:</strong> Up, Left, Down, Right arrows</li>
+                <li><strong>Direction Changes:</strong> Input changes direction, movement continues automatically</li>
+            </ul>
+
+            <h3>Game Controls</h3>
+            <ul>
+                <li><strong>P Key:</strong> Pause/unpause the game</li>
+                <li><strong>Q Key:</strong> Quit the current game</li>
+                <li><strong>Enter:</strong> Confirm selections in menus</li>
+            </ul>
+        </section>
+
+        <section class="collision-system">
+            <h2>Collision Detection & Combat</h2>
+            
+            <h3>Collision Types</h3>
+            <p>The engine handles various types of collisions:</p>
+            <ul>
+                <li><strong>Entity-Object Collisions:</strong> Players/enemies hitting walls, doors, etc.</li>
+                <li><strong>Entity-Entity Collisions:</strong> Combat between entities</li>
+                <li><strong>Collection Collisions:</strong> Picking up items and power-ups</li>
+            </ul>
+
+            <h3>Combat System</h3>
+            <p>Simple but effective combat mechanics:</p>
+            <ul>
+                <li><strong>Health System:</strong> Entities have health points and can take damage</li>
+                <li><strong>Damage Calculation:</strong> Contact-based damage system</li>
+                <li><strong>Death Handling:</strong> Entities are removed when health reaches zero</li>
+            </ul>
+        </section>
+
+        <section class="performance">
+            <h2>Performance & Optimization</h2>
+            
+            <h3>Memory Management</h3>
+            <p>The engine is optimized for low-end systems:</p>
+            <ul>
+                <li><strong>Efficient Data Structures:</strong> Optimized for minimal memory usage</li>
+                <li><strong>Limited Entity Count:</strong> Configurable limits prevent memory issues</li>
+                <li><strong>Simple Rendering:</strong> Text-based rendering minimizes CPU usage</li>
+            </ul>
+
+            <h3>Game Speed Control</h3>
+            <p>Games can be configured for different performance levels:</p>
+            <ul>
+                <li><strong>Configurable Speed:</strong> Adjust game speed via game file</li>
+                <li><strong>Frame Rate Control:</strong> Consistent timing regardless of system performance</li>
+                <li><strong>Adaptive Rendering:</strong> Adjusts to available system resources</li>
+            </ul>
+        </section>
+
+        <section class="development">
+            <h2>Game Development</h2>
+            
+            <h3>Creating Your First Game</h3>
+            <p>Getting started with game development:</p>
+            <ol>
+                <li><strong>Plan Your Game:</strong> Design the game mechanics and objectives</li>
+                <li><strong>Create the Game File:</strong> Write the text file with game configuration</li>
+                <li><strong>Design Levels:</strong> Create level layouts and object placement</li>
+                <li><strong>Test and Iterate:</strong> Play the game and refine the design</li>
+            </ol>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li><strong>Keep It Simple:</strong> Start with basic mechanics and add complexity gradually</li>
+                <li><strong>Test Frequently:</strong> Test your game often during development</li>
+                <li><strong>Use Clear Names:</strong> Descriptive names make games easier to understand</li>
+                <li><strong>Balance Difficulty:</strong> Ensure games are challenging but fair</li>
+            </ul>
+        </section>
+
+        <section class="examples">
+            <h2>Example Games</h2>
+            
+            <h3>Snake Game Example</h3>
+            <p>Here's a complete Snake game configuration:</p>
+            <pre><code>title: Snake Game
+description: Classic snake game
+controls: WASD to move, Q to quit
+board_width: 20
+board_height: 15
+game_speed: 150
+max_entities: 10
+max_objects: 50
+start_level: 0
+
+[level]
+name: Snake Level
+width: 20
+height: 15
+
+[objects]
+wall: type=1, symbol=#, color=7, solid=1, collectible=0, damage=0, health=0, name=Wall
+food: type=3, symbol=*, color=2, solid=0, collectible=1, damage=0, health=0, name=Food
+
+[entities]
+player: x=10, y=7, direction=1, symbol=@, color=14, health=3, max_health=3, damage=1, speed=1, name=Player, controlled=1, ai_type=0</code></pre>
+
+            <h3>Maze Game Example</h3>
+            <p>A simple maze game with keys and doors:</p>
+            <pre><code>title: Maze Runner
+description: Navigate the maze to find the exit
+controls: WASD to move, Q to quit
+board_width: 25
+board_height: 20
+game_speed: 200
+max_entities: 5
+max_objects: 100
+start_level: 0
+
+[level]
+name: First Maze
+width: 25
+height: 20
+
+[objects]
+wall: type=1, symbol=#, color=7, solid=1, collectible=0, damage=0, health=0, name=Wall
+key: type=7, symbol=K, color=6, solid=0, collectible=1, damage=0, health=0, name=Key
+door: type=6, symbol=D, color=3, solid=1, collectible=0, damage=0, health=0, name=Door
+exit: type=8, symbol=E, color=10, solid=0, collectible=0, damage=0, health=0, name=Exit
+
+[entities]
+player: x=2, y=2, direction=1, symbol=@, color=14, health=3, max_health=3, damage=1, speed=1, name=Player, controlled=1, ai_type=0</code></pre>
+        </section>
+
+        <section class="troubleshooting">
+            <h2>Troubleshooting</h2>
+            
+            <h3>Common Issues</h3>
+            <ul>
+                <li><strong>Game Won't Start:</strong> Check file format and syntax</li>
+                <li><strong>Entities Not Moving:</strong> Verify AI type and control settings</li>
+                <li><strong>Collisions Not Working:</strong> Check object properties and collision settings</li>
+                <li><strong>Performance Issues:</strong> Reduce entity count or game speed</li>
+            </ul>
+
+            <h3>Debugging Tips</h3>
+            <ul>
+                <li><strong>Use Simple Configurations:</strong> Start with basic setups</li>
+                <li><strong>Check File Syntax:</strong> Ensure proper formatting and values</li>
+                <li><strong>Test Incrementally:</strong> Add features one at a time</li>
+                <li><strong>Reference Examples:</strong> Use working games as templates</li>
+            </ul>
+        </section>
+
+        <section class="documentation-notes">
+            <h2>Additional Resources</h2>
+            <p>For complete technical details and advanced features:</p>
+            <ul>
+                <li><strong>GitHub Documentation:</strong> <a href="EYN-OS/docs/applications/game-engine.md" target="_blank">Complete Game Engine Documentation</a></li>
+                <li><strong>Source Code:</strong> <a href="EYN-OS/src/utilities/games/game_engine.c" target="_blank">Game Engine Source Code</a></li>
+                <li><strong>Header Files:</strong> <a href="EYN-OS/include/game_engine.h" target="_blank">Game Engine Headers</a></li>
+                <li><strong>Example Games:</strong> <a href="EYN-OS/testdir/games/" target="_blank">Sample Game Files</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
